@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171518">
+<meta name="description" content="Портфолио DARK4996 — мои работы и ссылки на проекты.">
+<title>DARK4996 — Портфолио</title>
+<style>
+ :root, :root[data-theme="classic-dark"] { color-scheme: dark; --bg: #191617; --surface: #231e20; --surface-hover: #30272a; --text: #f4edef; --muted: #bdb0b4; --line: #423339; --accent: #c87983; --accent-soft: #e1a6ae; --button-text: #211719; --particle-alt: #c87983; }
+:root[data-theme="classic-light"] { color-scheme: light; --bg: #fffafa; --surface: #ffffff; --surface-hover: #f8e9eb; --text: #312226; --muted: #786369; --line: #e7d2d6; --accent: #a54554; --accent-soft: #963746; --button-text: #ffffff; --particle-alt: #c87983; }
+:root[data-theme="pastel-dark"] { color-scheme: dark; --bg: #201e2b; --surface: #2c2939; --surface-hover: #373247; --text: #f2edf9; --muted: #c1b9d1; --line: #494257; --accent: #c4b0ec; --accent-soft: #e4b9d2; --button-text: #251d35; --particle-alt: #a8d8c8; }
+:root[data-theme="pastel-light"] { color-scheme: light; --bg: #fbf8ff; --surface: #ffffff; --surface-hover: #f0eaf9; --text: #392e48; --muted: #756581; --line: #e1d7ed; --accent: #7957a3; --accent-soft: #85517b; --button-text: #ffffff; --particle-alt: #8cc4b3; }
+:root[data-theme="bright-dark"] { color-scheme: dark; --bg: #100e10; --surface: #1c1518; --surface-hover: #2c171e; --text: #fff1f4; --muted: #c9afb7; --line: #52232e; --accent: #ff3658; --accent-soft: #ff8096; --button-text: #18090d; --particle-alt: #ff3658; }
+:root[data-theme="bright-light"] { color-scheme: light; --bg: #fff6f7; --surface: #ffffff; --surface-hover: #ffe5e9; --text: #310d17; --muted: #82515e; --line: #f5c4ce; --accent: #d00036; --accent-soft: #bd0030; --button-text: #ffffff; --particle-alt: #ff3658; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 Arial, Helvetica, sans-serif;
+  transition: background .2s, color .2s;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+.wrap { width: min(960px, calc(100% - 40px)); margin: 0 auto; }
+header { border-bottom: 1px solid var(--line); }
+.nav {
+  min-height: 72px; display: flex; align-items: center;
+  justify-content: space-between; gap: 18px;
+}
+.brand { font-weight: 800; letter-spacing: -.6px; font-size: 19px; }
+.brand span { color: var(--accent); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.profile-link, .theme-toggle {
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 13px; font-size: 13px;
+}
+.profile-link { background: var(--surface); }
+.profile-link:hover, .theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle { background: transparent; color: var(--text); cursor: pointer; }
+.hero { padding: 88px 0 76px; }
+.eyebrow {
+  color: var(--accent); font: 12px/1.4 "Courier New", monospace;
+  letter-spacing: 1.6px; text-transform: uppercase;
+}
+h1 { margin: 15px 0 14px; font-size: clamp(42px, 7vw, 66px); line-height: 1.05; letter-spacing: -2.8px; }
+h1 span { color: var(--accent); }
+.intro { max-width: 580px; color: var(--muted); margin: 0; font-size: 17px; }
+.hero-layout { display: flex; align-items: center; gap: 28px; }
+.avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 2px solid var(--line); background: var(--surface); flex: 0 0 auto; }
+.skills { padding: 42px 0 72px; }
+.skill-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.skill { display: block; padding: 14px 16px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
+.skill strong { display: block; color: var(--text); margin-bottom: 3px; font-size: 15px; }
+.skill span { display: block; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.theme-select { border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; background: var(--surface); color: var(--text); cursor: pointer; font: inherit; font-size: 13px; }
+.skill {
+  padding: 9px 13px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface); color: var(--text); font-size: 14px;
+}
+.skill small { color: var(--muted); font-size: 12px; } 
+.language-line { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+.lang-heading { display:flex; justify-content:space-between; gap:12px; font-size:12px; color:var(--muted); margin: 8px 0 6px; }
+.langbar { display:flex; width:100%; height:9px; overflow:hidden; border-radius:99px; background:var(--line); margin: 0 0 14px; }
+.langbar span { display:block; height:100%; }
+.lang-note { color:var(--muted); font-size:11px; margin: 0 0 14px; }
+.language-line a { color: var(--accent-soft); }
+.language-line a:hover { text-decoration: underline; }
+.works { padding: 42px 0 90px; }
+.section-head { margin-bottom: 26px; }
+h2 { font-size: clamp(29px, 4vw, 38px); letter-spacing: -1.3px; margin: 8px 0 0; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card {
+  min-height: 205px; padding: 23px; display: flex; flex-direction: column;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface); transition: transform .18s, background .18s, border-color .18s;
+}
+.card:hover { transform: translateY(-3px); background: var(--surface-hover); border-color: var(--accent); }
+.card-label { color: var(--muted); font: 11px "Courier New", monospace; letter-spacing: 1px; }
+.card h3 { font-size: 21px; margin: 18px 0 8px; letter-spacing: -.4px; }
+.card p { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+.card-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: auto; }
+.card-links a { color: var(--accent-soft); font-size: 13px; }
+.card-links a:hover { text-decoration: underline; }
+footer { border-top: 1px solid var(--line); color: var(--muted); padding: 22px 0; font-size: 12px; }
+@media (max-width: 640px) {
+  .wrap { width: min(100% - 32px, 960px); }
+  .nav { min-height: 66px; }
+  .profile-link { font-size: 12px; padding: 8px 10px; }
+  .theme-toggle { padding: 8px 10px; }
+  .hero { padding: 68px 0 58px; }
+  .hero-layout { align-items: flex-start; gap: 18px; }
+  .avatar { width: 76px; height: 76px; }
+  .skills { padding: 34px 0 56px; }
+  .grid, .skill-list { grid-template-columns: 1fr; }
+  .works { padding: 34px 0 66px; }
+}
+
+#particles { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+header, main, footer { position:relative; z-index:1; }
+header { z-index:3; background:var(--bg); }
+.hero { background:radial-gradient(ellipse at 25% 40%, color-mix(in srgb,var(--accent) 11%,transparent),transparent 65%); }
+.avatar { box-shadow:0 0 35px color-mix(in srgb,var(--accent) 18%,transparent); }
+.skill, .card, .profile-link, .theme-toggle { transition:background .25s, border-color .25s, transform .25s, box-shadow .25s; }
+.skill:hover, .card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 8px 30px color-mix(in srgb,var(--accent) 12%,transparent); }
+.theme-picker { position:relative; }
+.theme-toggle { display:flex; gap:8px; align-items:center; background:var(--surface); white-space:nowrap; }
+.current-palette, .swatches { display:flex; gap:3px; align-items:center; }
+.current-palette i, .swatches i { display:block; width:12px; height:12px; border:1px solid #8887; border-radius:50%; }
+.theme-panel { position:absolute; right:0; top:calc(100% + 12px); width:300px; max-width:calc(100vw - 32px); padding:14px; background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:0 15px 50px #0003; }
+.theme-panel[hidden] { display:none; }
+.picker-heading { font-size:12px; color:var(--muted); font-weight:bold; margin-bottom:8px; }
+.theme-options { display:grid; gap:6px; }
+.theme-option { display:flex; align-items:center; gap:10px; width:100%; text-align:left; padding:10px; border:1px solid var(--line); border-radius:9px; background:var(--bg); color:var(--text); cursor:pointer; }
+.theme-option strong { font-size:13px; display:block; }
+.theme-option small { display:block; font-size:11px; color:var(--muted); }
+.theme-option .swatches { margin-left:auto; }
+.theme-option .swatches i { width:16px; height:16px; }
+.theme-option[aria-pressed="true"], .mode-options button[aria-pressed="true"] { border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent); }
+.mode-heading { margin-top:14px; }
+.mode-options { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.mode-options button { background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:8px; cursor:pointer; font-size:13px; }
+button:focus-visible,a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:480px) { .nav { flex-wrap:wrap; padding:12px 0; gap:8px; } .nav-actions { gap:6px; flex-wrap:wrap; } .theme-panel { right:0; } .theme-toggle { padding:8px; } }
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } #particles { display:none; } }
+</style>
+</head>
+<body>
+<canvas id="particles" aria-hidden="true"></canvas>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="DARK4996 — главная">DARK<span>4996</span></a>
+    <div class="nav-actions">
+      <a class="profile-link" href="https://github.com/DARK4996" target="_blank" rel="noopener noreferrer">GitHub профиль ↗</a>
+      <div class="theme-picker" id="themePicker">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-expanded="false" aria-controls="themePanel"><span class="current-palette" id="currentPalette" aria-hidden="true"></span><span>Оформление</span><span aria-hidden="true">⌄</span></button>
+        <div class="theme-panel" id="themePanel" hidden>
+          <div class="picker-heading">Цветовая тема</div>
+          <div class="theme-options" id="themeOptions" role="group" aria-label="Палитра"></div>
+          <div class="picker-heading mode-heading">Режим оформления</div>
+          <div class="mode-options" role="group" aria-label="Светлый или тёмный режим">
+            <button type="button" data-mode="dark" aria-pressed="true">☾ Тёмный</button>
+            <button type="button" data-mode="light" aria-pressed="false">☀ Белый</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-layout">
+        <img class="avatar" src="https://github.com/DARK4996.png" alt="Аватар GitHub профиля DARK4996" width="112" height="112">
+        <div>
+          <div class="eyebrow">Портфолио</div>
+          <h1>Привет, я <span>DARK4996</span></h1>
+          <p class="intro">Здесь собраны мои проекты и навыки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Технологии</div>
+        <h2>Мои навыки</h2>
+      </div>
+      <div class="skill-list">
+        <div class="skill"><strong>Python</strong><span>Написание скриптов и небольших программ.</span></div>
+        <div class="skill"><strong>HTML, CSS и JavaScript</strong><span>Создание и оформление веб-страниц, добавление интерактивности.</span></div>
+        <div class="skill"><strong>Lua</strong><span>Средний уровень: знаком с синтаксисом и могу писать скрипты.</span></div>
+        <div class="skill"><strong>Windows Batch (.bat)</strong><span>Командные сценарии Windows для автоматизации простых задач.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="works" id="works">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Проекты</div>
+        <h2>Мои работы</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-label">01 / GITHUB REPOSITORY</div>
+          <h3>TG_Proxy_Scanner</h3>
+          <p>Инструмент для проверки Telegram-прокси. Подробности и исходный код — в репозитории.</p>
+          <div class="lang-heading"><span>Языки репозитория</span><a href="https://github.com/DARK4996/TG_Proxy_Scanner" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+          <div class="lang-note">Проценты можно указать точно после получения статистики Languages из GitHub.</div>
+          <div class="card-links">
+            <a href="https://github.com/DARK4996/TG_Proxy_Scanner" target="_blank" rel="noopener noreferrer">Исходный код ↗</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-label">02 / WEBSITE</div>
+          <h3>stroymarket</h3>
+          <p>Веб-сайт Stroymarket. Можно посмотреть опубликованную версию или открыть исходный код.</p>
+          <div class="lang-heading"><span>Языки репозитория</span><a href="https://github.com/DARK4996/stroymarket" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+          <div class="lang-note">Проценты можно указать точно после получения статистики Languages из GitHub.</div>
+          <div class="card-links">
+            <a href="https://github.com/DARK4996/stroymarket" target="_blank" rel="noopener noreferrer">Исходный код ↗</a>
+            <a href="https://dark4996.github.io/stroymarket/" target="_blank" rel="noopener noreferrer">Открыть превью ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© DARK4996</div>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const palettes = {"classic-dark": ["#191617", "#231e20", "#423339", "#c87983", "#c87983"], "classic-light": ["#fffafa", "#ffffff", "#e7d2d6", "#a54554", "#c87983"], "pastel-dark": ["#201e2b", "#2c2939", "#494257", "#c4b0ec", "#a8d8c8"], "pastel-light": ["#fbf8ff", "#ffffff", "#e1d7ed", "#7957a3", "#8cc4b3"], "bright-dark": ["#100e10", "#1c1518", "#52232e", "#ff3658", "#ff3658"], "bright-light": ["#fff6f7", "#ffffff", "#f5c4ce", "#d00036", "#ff3658"]};
+  const names = {classic:['Классическая','Приглушённый красный'],pastel:['Пастельная','Лавандовый и мятный'],bright:['Яркая','Насыщенный красный']};
+  let family='classic', mode='dark';
+  try { const saved=localStorage.getItem('portfolio-theme'); if(saved==='white') mode='light'; else if(names[saved]) family=saved; else if(palettes[saved]) [family,mode]=saved.split('-'); } catch (_) {}
+  const panel=document.getElementById('themePanel'), toggle=document.getElementById('themeToggle'), options=document.getElementById('themeOptions');
+  const swatches=(key)=>palettes[key].map(c=>`<i style="background:${c}"></i>`).join('');
+  for(const [key, info] of Object.entries(names)) {
+    const button=document.createElement('button'); button.type='button'; button.className='theme-option'; button.dataset.family=key;
+    button.innerHTML=`<span><strong>${info[0]}</strong><small>${info[1]}</small></span><span class="swatches" aria-hidden="true"></span>`;
+    button.addEventListener('click',()=>{family=key; apply();}); options.append(button);
+  }
+  function apply(){
+    const key=family+'-'+mode; root.dataset.theme=key;
+    document.querySelector('meta[name="theme-color"]').content=palettes[key][0];
+    document.getElementById('currentPalette').innerHTML=swatches(key);
+    for(const b of options.children){b.setAttribute('aria-pressed',String(b.dataset.family===family)); b.querySelector('.swatches').innerHTML=swatches(b.dataset.family+'-'+mode);}
+    for(const b of panel.querySelectorAll('[data-mode]')) b.setAttribute('aria-pressed',String(b.dataset.mode===mode));
+    try {localStorage.setItem('portfolio-theme',key);}catch(_){}
+    particleColors=[palettes[key][3],palettes[key][4]];
+  }
+  function open(value){panel.hidden=!value; toggle.setAttribute('aria-expanded',String(value));}
+  toggle.addEventListener('click',()=>open(panel.hidden));
+  document.addEventListener('click',e=>{if(!document.getElementById('themePicker').contains(e.target))open(false);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){open(false);toggle.focus();}});
+  for(const b of panel.querySelectorAll('[data-mode]')) b.addEventListener('click',()=>{mode=b.dataset.mode;apply();});
+  let particleColors=[]; apply();
+  const canvas=document.getElementById('particles'), ctx=canvas.getContext('2d');
+  if(!ctx)return;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  let w=0,h=0,dots=[],frame=0,last=0;
+  function resize(){w=innerWidth;h=innerHeight;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);dots=Array.from({length:Math.min(48,Math.max(12,Math.floor(w*h/24000)))},()=>({x:Math.random()*w,y:Math.random()*h,r:.7+Math.random()*1.5,v:4+Math.random()*9,dx:(Math.random()-.5)*5,t:Math.random()*6.28,c:Math.random()<.7?0:1}));}
+  function draw(now){const dt=Math.min((now-(last||now))/1000,.05);last=now;ctx.clearRect(0,0,w,h);for(const p of dots){p.y-=p.v*dt;p.x+=p.dx*dt;if(p.y<-5)p.y=h+5;if(p.x<0)p.x=w;if(p.x>w)p.x=0;ctx.globalAlpha=(mode==='light'?.24:.38)*(.65+.35*Math.sin(now/1800+p.t));ctx.fillStyle=particleColors[p.c];ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;frame=requestAnimationFrame(draw);}
+  function sync(){cancelAnimationFrame(frame);last=0;if(!reduced.matches&&!document.hidden)frame=requestAnimationFrame(draw);else ctx.clearRect(0,0,w,h);}
+  resize();sync();addEventListener('resize',resize);document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);
+})();
+</script>
+</body>
+</html>
